@@ -67,80 +67,22 @@
                         </h2>
 
                          <div class="owl-carousel owl-theme" id="project-slide">
-                              <div class="item project-wrapper" data-aos="fade-up" data-aos-delay="100">
-                                   <img src="{{asset('images/project/project-image01.jpg')}}" class="img-fluid" alt="project image">
+                              @foreach ($projects as $project)
+                                   <div class="item project-wrapper" data-aos="fade-up" data-aos-delay="100">
+                                        <img src="{{asset($project->image)}}" class="img-fluid" alt="project image">
 
-                                   <div class="project-info">
-                                        <small>Marketing</small>
+                                        <div class="project-info">
+                                             <small>{{$project->category}}</small>
 
-                                        <h3>
-                                             <a href="{{route('projectDetail')}}">
-                                                  <span>Sweet Go Agency</span>
-                                                  <i class="fa fa-angle-right project-icon"></i>
-                                             </a>
-                                        </h3>
+                                             <h3>
+                                                  <a href="{{route('projectDetail', ['slug' => $project->slug])}}">
+                                                       <span>{{$project->title}}</span>
+                                                       <i class="fa fa-angle-right project-icon"></i>
+                                                  </a>
+                                             </h3>
+                                        </div>
                                    </div>
-                              </div>
-
-                              <div class="item project-wrapper" data-aos="fade-up">
-                                   <img src="{{asset('images/project/project-image02.jpg')}}" class="img-fluid" alt="project image">
-
-                                   <div class="project-info">
-                                        <small>Website</small>
-
-                                        <h3>
-                                             <a href="{{route('projectDetail')}}">
-                                                  <span>Smart Ladies</span>
-                                                  <i class="fa fa-angle-right project-icon"></i>
-                                             </a>
-                                        </h3>
-                                   </div>
-                              </div>
-
-                              <div class="item project-wrapper" data-aos="fade-up">
-                                   <img src="{{asset('images/project/project-image03.jpg')}}" class="img-fluid" alt="project image">
-
-                                   <div class="project-info">
-                                        <small>Branding</small>
-
-                                        <h3>
-                                             <a href="{{route('projectDetail')}}">
-                                                  <span>Shoes factory</span>
-                                                  <i class="fa fa-angle-right project-icon"></i>
-                                             </a>
-                                        </h3>
-                                   </div>
-                              </div>
-
-                              <div class="item project-wrapper" data-aos="fade-up">
-                                   <img src="{{asset('images/project/project-image04.jpg')}}" class="img-fluid" alt="project image">
-
-                                   <div class="project-info">
-                                        <small>Social Media</small>
-
-                                        <h3>
-                                             <a href="{{route('projectDetail')}}">
-                                                  <span>Race Bicycle</span>
-                                                  <i class="fa fa-angle-right project-icon"></i>
-                                             </a>
-                                        </h3>
-                                   </div>
-                              </div>
-
-                              <div class="item project-wrapper" data-aos="fade-up">
-                                   <img src="{{asset('images/project/project-image05.jpg')}}" class="img-fluid" alt="project image">
-
-                                   <div class="project-info">
-                                        <small>Video</small>
-
-                                        <h3>
-                                             <a href="{{route('projectDetail')}}">
-                                                  <span>Ultimate HealthCare</span>
-                                                  <i class="fa fa-angle-right project-icon"></i>
-                                             </a>
-                                        </h3>
-                                   </div>
-                              </div>
+                              @endforeach
                          </div>
                     </div>
 
