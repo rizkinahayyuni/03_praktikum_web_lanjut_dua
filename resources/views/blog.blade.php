@@ -24,36 +24,17 @@
               </div>
 
               <div class="col-lg-5 col-md-5 col-12 mb-4">
-                <div class="blog-sidebar d-flex justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
-                  <img src="{{asset('images/blog/blog-sidebar-image.jpg')}}" class="img-fluid" alt="blog">
+                @foreach ($blogs as $blog)
+                  <div class="blog-sidebar d-flex justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
+                    <img src="{{asset($blog->image)}}" class="img-fluid" alt="blog">
 
-                  <div class="blog-info">
-                    <h4 class="blog-category text-danger">Design</h4>
+                    <div class="blog-info">
+                      <h4 class="blog-category text-danger">{{$blog->category}}</h4>
 
-                    <h3><a href="{{route('blogDetail')}}">Why Truly Accessible Design Benefits Everyone</a></h3>
+                      <h3><a href="{{route('blogDetail', ['slug' => $blog->slug])}}">{{$blog->title}}</a></h3>
+                    </div>
                   </div>
-                </div>
-
-                <div class="blog-sidebar py-4 d-flex justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="300">
-                  <img src="{{asset('images/blog/blog-sidebar-image01.jpg')}}" class="img-fluid" alt="blog">
-
-                  <div class="blog-info">
-                    <h4 class="blog-category text-success">lifestyle</h4>
-
-                    <h3><a href="{{route('blogDetail')}}}">Be Humble About What You Know</a></h3>
-                  </div>
-                </div>
-
-                <div class="blog-sidebar d-flex justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
-                  <img src="{{asset('images/blog/blog-sidebar-image02.jpg')}}" class="img-fluid" alt="blog">
-
-                  <div class="blog-info">
-                    <h4 class="blog-category text-primary">Coding</h4>
-
-                    <h3><a href="{{route('blogDetail')}}">The Mistakes I Made As a Coding Beginner</a></h3>
-                  </div>
-                </div>
-
+                @endforeach
               </div>
 
               <div class="col-lg-5 ml-auto mt-5 pt-5 col-md-6 col-12">

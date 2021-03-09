@@ -23,3 +23,5 @@ Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 Route::get('/project-detail', [ProjectDetailController::class, 'index'])->name('projectDetail');
 Route::get('/blog-detail', [BlogDetailController::class, 'index'])->name('blogDetail');
+
+// Route::get('/today-special', [TodaySpecialController::class, 'index'])->name('todaySpecial')
